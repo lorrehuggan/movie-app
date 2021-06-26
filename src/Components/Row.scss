@@ -1,0 +1,47 @@
+.row {
+  .row__title {
+    text-align: left;
+    color: #dcdcdc;
+    padding: 2rem 1rem;
+  }
+
+  .row__posters {
+    display: flex;
+    padding-left: 2rem;
+
+    .poster__img-container {
+      position: relative;
+
+      .poster__img-container__text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: white;
+        padding-bottom: 3rem;
+        padding-left: 2rem;
+        text-transform: uppercase;
+        font-size: 1rem;
+      }
+    }
+
+    .row__poster {
+      object-fit: contain;
+      height: 500px;
+      margin-right: 0.8rem;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.08);
+        transform: translateY(-5px);
+      }
+    }
+
+    .row__poster-backdrop {
+      object-fit: contain;
+      height: 250px;
+      margin-right: 0.8rem;
+      border-radius: 10px;
+    }
+  }
+}
