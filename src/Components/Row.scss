@@ -1,4 +1,8 @@
 .row {
+  width: 1200px;
+
+  left: 0;
+  overflow-x: hidden;
   .row__title {
     text-align: left;
     color: #dcdcdc;
@@ -7,7 +11,6 @@
 
   .row__posters {
     display: flex;
-    padding-left: 2rem;
 
     .poster__img-container {
       position: relative;
@@ -26,8 +29,9 @@
 
     .row__poster {
       object-fit: contain;
-      height: 500px;
-      margin-right: 0.8rem;
+      width: 290px;
+      margin-right: 5px;
+      margin-left: 5px;
       border-radius: 10px;
       transition: transform 0.3s ease;
 

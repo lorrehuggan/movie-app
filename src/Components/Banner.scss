@@ -1,15 +1,17 @@
 .banner {
-  height: 75vh;
-  width: 100vw;
+  height: 40vh;
+  width: 50vw;
   background-color: black;
   position: relative;
   z-index: -2;
+  border-radius: 40px;
+  margin-top: 10vh;
 
   .banner__background {
     width: 100%;
     height: 100%;
     padding: 3rem;
-    padding-top: 25rem;
+    padding-top: 15%;
 
     .banner__heading {
       color: white;
@@ -21,7 +23,7 @@
       button {
         padding: 1rem 2rem;
         border: none;
-        background-color: rgba(196, 196, 196, 0.247);
+        background-color: rgba(26, 26, 26, 0.664);
         color: white;
         margin-right: 1rem;
         border-radius: 5px;

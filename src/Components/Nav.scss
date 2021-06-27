@@ -1,0 +1,20 @@
+@import '../Sass/mixin';
+@import '../Sass/variables';
+
+nav {
+  width: 50vw;
+  height: 10vh;
+  color: white;
+  position: absolute;
+  top: 0;
+
+  ul {
+    height: 10vh;
+    width: 25%;
+    list-style: none;
+    @include flex(row, space-between);
+    li {
+      font-size: 1.5rem;
+    }
+  }
+}

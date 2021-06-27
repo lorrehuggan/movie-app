@@ -1,0 +1,41 @@
+@import '../Sass/variables';
+@import '../Sass/mixin';
+
+.sidebar__container {
+  position: fixed;
+  height: 100vh;
+  .sidebar__left {
+    height: 100vh;
+    width: 15vw;
+    background-color: $main-back-dark;
+    border-right: 1px solid white;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    .sidebar__container {
+      padding: 1.5rem;
+      @include flex(column, space-between);
+      height: 100vh;
+      width: 15vw;
+      color: white;
+    }
+  }
+  .sidebar__right {
+    height: 100vh;
+    width: 15vw;
+    background-color: $main-back-dark;
+    border-left: 1px solid white;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .sidebar__container {
+      padding: 1.5rem;
+      @include flex(column, space-between);
+      height: 100vh;
+      width: 15vw;
+      color: white;
+    }
+  }
+}
