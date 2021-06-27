@@ -1,6 +1,8 @@
 import React from 'react';
 import './Nav.scss';
 
+import UserNav from '../Elements/UserNav';
+
 function Nav() {
   return (
     <nav>
@@ -9,6 +11,7 @@ function Nav() {
         <li>Movies</li>
         <li>Animes</li>
       </ul>
+      <UserNav />
     </nav>
   );
 }

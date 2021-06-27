@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../Utils/axios';
 import './Row.scss';
+import { AiFillCaretRight, AiFillCaretLeft } from 'react-icons/ai';
 
 const base_img_url = 'https://image.tmdb.org/t/p/original';
 
@@ -40,7 +41,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
     if (translate !== 0) {
       setTranslate(translate + 600);
       setHideButton(false);
-    } else {
+    } else if (translate === 0) {
       setTranslate(0);
       setHideButton(true);
     }
@@ -56,10 +57,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
             className={hideButton ? 'display-none' : 'left__button'}
             id="previous"
           >
-            left
+            <AiFillCaretLeft />
           </button>
           <button onClick={nextHandler} className="right__button" id="next">
-            right
+            <AiFillCaretRight />
           </button>
         </div>
       </div>
@@ -67,7 +68,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
       <div style={translateX} className="row__posters">
         {movies.map((movie) => {
           return (
-            <>
+            <div key={movie.id}>
               <div className="poster__img-container">
                 <h2 className="poster__img-container__text">
                   {isLargeRow ? '' : movie.name || movie.title}
@@ -85,7 +86,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
                   alt={movie.name || movie.title}
                 />
               </div>
-            </>
+            </div>
           );
         })}
       </div>

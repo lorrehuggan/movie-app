@@ -3,8 +3,6 @@ import './Banner.scss';
 import request from '../Utils/request';
 import axios from '../Utils/axios';
 
-const base_img_url = 'https://image.tmdb.org/t/p/original';
-
 function Banner() {
   const [movie, setMovie] = useState([]);
   const bannerImgPath = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
@@ -35,6 +33,7 @@ function Banner() {
         backgroundPosition: 'center center',
       }}
     >
+      <div className="banner__gradient"></div>
       <div className="banner__background">
         <h1 className="banner__heading">
           {movie.title || movie.name || movie.original_name}

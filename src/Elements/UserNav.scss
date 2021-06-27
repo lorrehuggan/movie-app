@@ -1,0 +1,22 @@
+@import '../Sass/mixin';
+@import '../Sass/variables';
+
+.user__id {
+  @include flex(column, space-between);
+
+  img {
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 50%;
+    border: 4px solid $main-color;
+    height: 70px;
+    width: 70px;
+  }
+
+  small {
+    margin-top: 0.5rem;
+    color: white;
+    letter-spacing: 1.2px;
+    font-size: 1rem;
+  }
+}

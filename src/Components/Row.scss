@@ -2,8 +2,9 @@
 
 .display-none {
   opacity: 0;
-  transition: opacity 1.5s ease;
+
   pointer-events: none;
+  transition: opacity 1.5s ease;
 }
 
 .row {
@@ -22,24 +23,30 @@
     .row__scroll {
       @include flex(row, center);
       button {
-        padding: 0.3rem 1rem;
+        padding: 0.1rem 1.4rem;
         margin-left: 1rem;
-        background-color: #dcdcdc;
+        background-color: #fafafa;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         transition: opacity 0.2s ease;
         &:hover {
-          background-color: #9e9e9e;
+          background-color: #e2e2e2;
         }
       }
-      .left__button {
+      .right__button {
+        @include flex(row, center);
         opacity: 1;
         transition: opacity 1.5s ease;
+        font-size: 1.3rem;
+        color: rgb(53, 53, 53);
       }
       .left__button {
+        @include flex(row, center);
         opacity: 1;
-        transition: opacity 1.5s ease;
+        transition: opacity 3s ease;
+        font-size: 1.3rem;
+        color: rgb(53, 53, 53);
       }
     }
   }
