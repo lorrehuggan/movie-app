@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import axios from '../Utils/axios';
 import './Row.scss';
 
@@ -7,6 +6,9 @@ const base_img_url = 'https://image.tmdb.org/t/p/original';
 
 function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
+  const [translate, setTranslate] = useState(0);
+  const [number, setNumber] = useState(0);
+  const [hideButton, setHideButton] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
@@ -17,11 +19,52 @@ function Row({ title, fetchUrl, isLargeRow }) {
     }
     fetchData();
   }, [fetchUrl]);
-  console.log(movies);
+
+  let length = movies.length;
+
+  let translateX = { transform: `translateX(${translate}px)` };
+
+  function nextHandler() {
+    setNumber(number + 2);
+    if (length === number + 4) {
+      setTranslate(0);
+      setNumber(0);
+      setHideButton(true);
+    } else {
+      setTranslate(translate - 600);
+      setHideButton(false);
+    }
+  }
+
+  function prevHandler() {
+    if (translate !== 0) {
+      setTranslate(translate + 600);
+      setHideButton(false);
+    } else {
+      setTranslate(0);
+      setHideButton(true);
+    }
+  }
+
   return (
     <div className="row">
-      <h2 className="row__title">{title}</h2>
-      <div className="row__posters">
+      <div className="row__header">
+        <h2 className="row__title">{title}</h2>
+        <div className="row__scroll">
+          <button
+            onClick={prevHandler}
+            className={hideButton ? 'display-none' : 'left__button'}
+            id="previous"
+          >
+            left
+          </button>
+          <button onClick={nextHandler} className="right__button" id="next">
+            right
+          </button>
+        </div>
+      </div>
+
+      <div style={translateX} className="row__posters">
         {movies.map((movie) => {
           return (
             <>

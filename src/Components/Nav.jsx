@@ -5,9 +5,9 @@ function Nav() {
   return (
     <nav>
       <ul>
-        <li>One</li>
-        <li>Two</li>
-        <li>Three</li>
+        <li>TV Series</li>
+        <li>Movies</li>
+        <li>Animes</li>
       </ul>
     </nav>
   );

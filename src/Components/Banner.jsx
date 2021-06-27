@@ -40,7 +40,7 @@ function Banner() {
           {movie.title || movie.name || movie.original_name}
         </h1>
         <div className="banner__buttons">
-          <button>Pla</button>
+          <button>Play</button>
           <button>My List</button>
         </div>
         <p className="banner__info">{truncate(movie.overview, 150)}</p>
