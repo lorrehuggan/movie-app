@@ -1,4 +1,5 @@
 @import '../Sass/mixin';
+@import '../Sass/variables';
 
 .display-none {
   opacity: 0;
@@ -18,20 +19,22 @@
     .row__title {
       text-align: left;
       color: #dcdcdc;
-      padding: 2rem 1rem;
+      padding: 2rem 0rem;
+      font-size: 1.5rem;
     }
     .row__scroll {
       @include flex(row, center);
       button {
         padding: 0.1rem 1.4rem;
         margin-left: 1rem;
-        background-color: #fafafa;
+        background-color: $main-color;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        transition: opacity 0.2s ease;
+        transition: all 0.2s ease;
+
         &:hover {
-          background-color: #e2e2e2;
+          background-color: #4491a8;
         }
       }
       .right__button {
@@ -39,21 +42,23 @@
         opacity: 1;
         transition: opacity 1.5s ease;
         font-size: 1.3rem;
-        color: rgb(53, 53, 53);
+        color: white;
+        transition: all 0.2s ease;
       }
       .left__button {
         @include flex(row, center);
         opacity: 1;
         transition: opacity 3s ease;
         font-size: 1.3rem;
-        color: rgb(53, 53, 53);
+        color: white;
+        transition: all 0.2s ease;
       }
     }
   }
 
   .row__posters {
     display: flex;
-    transition: transform 1s ease;
+    transition: transform 0.7s ease;
 
     .poster__img-container {
       position: relative;
@@ -76,11 +81,11 @@
       margin-right: 5px;
       margin-left: 5px;
       border-radius: 10px;
-      transition: transform 0.3s ease;
+      transition: transform 0.5s ease;
+      cursor: pointer;
 
       &:hover {
-        transform: scale(1.08);
-        transform: translateY(-5px);
+        transform: translateY(-10px);
       }
     }
 

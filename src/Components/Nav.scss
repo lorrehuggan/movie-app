@@ -5,9 +5,12 @@ nav {
   width: 1200px;
   height: 10vh;
   color: white;
-  position: absolute;
   top: 0;
   @include flex(row, space-between);
+  position: fixed;
+  z-index: 999;
+  padding: 2rem 0rem;
+
   .logo {
     color: $main-color;
     font-family: $logo-font;
@@ -26,4 +29,13 @@ nav {
       }
     }
   }
+}
+
+.nav-black {
+  background-color: $main-back-dark;
+  transition: background-color 0.5s ease;
+}
+.nav-black-false {
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.5s ease;
 }

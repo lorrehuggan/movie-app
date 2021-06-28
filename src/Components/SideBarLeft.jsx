@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './SideBarLeft.scss';
 import {
   AiFillHome,
@@ -11,13 +11,27 @@ import { ImCompass2 } from 'react-icons/im';
 import { RiTimerLine } from 'react-icons/ri';
 import { FaUserFriends } from 'react-icons/fa';
 import { VscFileMedia } from 'react-icons/vsc';
+import { gsap } from 'gsap';
 
 function SideBar() {
+  const logo = useRef();
+
+  useEffect(() => {
+    gsap.from(logo.current, {
+      duration: 1,
+      opacity: 0,
+      y: -100,
+      delay: 1.5,
+      ease: 'Power3.easeInOut',
+    });
+  }, []);
   return (
     <section className="sidebar">
       <div className="sidebar__left">
         <div className="sidebar__container">
-          <div className="sidebar__logo ">NETLEE</div>
+          <div ref={logo} className="sidebar__logo ">
+            NETLORRE
+          </div>
           <div className="sidebar__menu menu">
             <div className="sidebar__header">
               <h3>Menu</h3>

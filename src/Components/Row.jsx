@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from '../Utils/axios';
 import './Row.scss';
 import { AiFillCaretRight, AiFillCaretLeft } from 'react-icons/ai';
+import YouTube from 'react-youtube';
+import movieTrailer from 'movie-trailer';
 
 const base_img_url = 'https://image.tmdb.org/t/p/original';
 
-function Row({ title, fetchUrl, isLargeRow }) {
+function Row({ title, fetchUrl, isLargeRow, isMovieRow }) {
   const [movies, setMovies] = useState([]);
+  const [trailerUrl, setTrailerUrl] = useState('');
   const [translate, setTranslate] = useState(0);
   const [number, setNumber] = useState(0);
   const [hideButton, setHideButton] = useState(true);
@@ -20,6 +23,14 @@ function Row({ title, fetchUrl, isLargeRow }) {
     }
     fetchData();
   }, [fetchUrl]);
+
+  const opts = {
+    height: '390',
+    width: '100%',
+    playerVars: {
+      autoplay: 1,
+    },
+  };
 
   let length = movies.length;
 
@@ -46,6 +57,19 @@ function Row({ title, fetchUrl, isLargeRow }) {
       setHideButton(true);
     }
   }
+
+  const handleClick = (movie) => {
+    if (trailerUrl) {
+      setTrailerUrl('');
+    } else {
+      movieTrailer(movie?.name || '')
+        .then((url) => {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          setTrailerUrl(urlParams.get('v'));
+        })
+        .catch((error) => console.log(error));
+    }
+  };
 
   return (
     <div className="row">
@@ -75,6 +99,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
                 </h2>
                 {!isLargeRow && <div className="poster__img-gradient"></div>}
                 <img
+                  onClick={() => handleClick(movie)}
                   className={
                     isLargeRow ? 'row__poster' : 'row__poster-backdrop'
                   }
@@ -90,6 +115,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
           );
         })}
       </div>
+      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </div>
   );
 }
