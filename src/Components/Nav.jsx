@@ -3,7 +3,7 @@ import './Nav.scss';
 
 import UserNav from '../Elements/UserNav';
 
-function Nav() {
+function Nav({ log }) {
   const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
@@ -16,14 +16,30 @@ function Nav() {
     });
   });
 
+  const userLoginHandler = () => {
+    log(false);
+  };
+
   return (
-    <nav className={showNav ? 'nav-black' : 'nav-black-false'}>
-      <ul>
-        <li>TV Series</li>
-        <li>Movies</li>
-        <li>Animes</li>
-      </ul>
-      <UserNav />
+    <nav>
+      <div
+        className={
+          showNav
+            ? 'nav-black nav__container'
+            : 'nav-black-false nav__container'
+        }
+      >
+        <ul>
+          <li>TV Series</li>
+          <li>Movies</li>
+          <li>Animes</li>
+          <li>
+            <button onClick={userLoginHandler}>log out</button>
+          </li>
+        </ul>
+
+        <UserNav />
+      </div>
     </nav>
   );
 }

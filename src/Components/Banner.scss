@@ -3,11 +3,12 @@
 
 .banner {
   height: 40vh;
-  width: 1200px;
+  width: 1280px;
   background-color: black;
   position: relative;
-  z-index: -2;
+  z-index: 2;
   border-radius: 40px;
+  margin-top: 10vh;
 
   .banner__background {
     width: 100%;

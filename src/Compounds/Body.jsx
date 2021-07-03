@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Row from '../Components/Row';
 import request from '../Utils/request';
 import Banner from '../Components/Banner';
 import './Body.scss';
+import SideBarRight from '../Components/SideBarRight';
+import SideBarLeft from '../Components/SideBarLeft';
+import Nav from '../Components/Nav';
 
-function Body() {
+function Body({ userLogin }) {
+  const userLoginHandler = () => {
+    userLogin(false);
+  };
   return (
     <section className="body">
+      <Nav log={userLogin} />
+      <SideBarRight fetchUrl={request.fetchTrending} />
+      <SideBarLeft />
       <Banner />
       <Row
         isMovieRow={true}
@@ -38,11 +47,7 @@ function Body() {
         title="Documentary"
         fetchUrl={request.fetchDocumentary}
       />
-
-      {/* <Row title="Action" fetchUrl={request.fetchAction} />
-      <Row title="Comedy" fetchUrl={request.fetchComedy} />
-      <Row title="Documentary" fetchUrl={request.fetchDocumentary} />
-      <Row title="Science Fiction" fetchUrl={request.fetchSciFi} /> */}
+      <button onClick={userLoginHandler}>log out </button>
     </section>
   );
 }

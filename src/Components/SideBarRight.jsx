@@ -18,8 +18,9 @@ function SideBar({ fetchUrl }) {
     fetchData();
   }, [fetchUrl]);
 
-  let top3 = movies.slice(10, 13);
-  let fav = movies.slice(16, 19);
+  let top3 = movies.slice(0, 3);
+
+  let fav = movies.slice(15, 18);
 
   return (
     <section className="sidebar__right">

@@ -73,6 +73,8 @@ function Row({ title, fetchUrl, isLargeRow, isMovieRow }) {
 
   return (
     <div className="row">
+      <div className="row__gradient-right"></div>
+      <div className="row__gradient-left"></div>
       <div className="row__header">
         <h2 className="row__title">{title}</h2>
         <div className="row__scroll">
