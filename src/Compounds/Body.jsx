@@ -14,7 +14,10 @@ function Body({ userLogin }) {
   return (
     <section className="body">
       <Nav log={userLogin} />
-      <SideBarRight fetchUrl={request.fetchTrending} />
+      <SideBarRight
+        fetchUrl={request.fetchTrending}
+        fetchQuery={request.fetchQuerySearch}
+      />
       <SideBarLeft />
       <Banner />
       <Row

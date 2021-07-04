@@ -22,6 +22,7 @@
   right: 0;
   top: 0;
   height: 100vh;
+  z-index: 6;
 
   .sidebar__left {
     height: 100vh;
@@ -90,6 +91,7 @@
         top: 0;
         height: 10vh;
         text-align: left;
+        z-index: 999;
         form {
           @include flex(row, center);
           height: 40px;
