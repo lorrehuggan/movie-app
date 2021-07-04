@@ -33,12 +33,12 @@ function Nav({ log }) {
           <li>TV Series</li>
           <li>Movies</li>
           <li>Animes</li>
-          <li>
-            <button onClick={userLoginHandler}>log out</button>
-          </li>
         </ul>
 
         <UserNav />
+        <button style={{ marginLeft: '2rem' }} onClick={userLoginHandler}>
+          log out
+        </button>
       </div>
     </nav>
   );

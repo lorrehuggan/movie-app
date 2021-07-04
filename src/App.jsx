@@ -17,7 +17,15 @@ function App() {
         <Body userLogin={setIsLoggedIn} />
       ) : (
         <div>
-          <h1>Log In</h1>
+          <h1
+            style={{
+              color: '#ffffff',
+              marginTop: '2rem',
+              marginBottom: '1rem',
+            }}
+          >
+            Test Log In
+          </h1>
           <button onClick={setLog}>Sign In</button>
         </div>
       )}

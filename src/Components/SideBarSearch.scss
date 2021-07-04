@@ -1,0 +1,42 @@
+@import '../Sass/variables';
+@import '../Sass/mixin';
+
+.sidebar__search {
+  position: absolute;
+  @include flex(row, center);
+  font-size: 1.2rem;
+  color: $main-color;
+  font-weight: 900;
+  width: 70%;
+  top: 0;
+  height: 10vh;
+  text-align: left;
+  z-index: 999;
+  form {
+    @include flex(row, center);
+    height: 40px;
+    input {
+      border: none;
+      height: 100%;
+      padding-left: 1rem;
+      color: gray;
+      font-size: 1.1rem;
+      outline: none;
+      border-radius: 5px 0px 0px 5px;
+    }
+    button {
+      @include flex(row, center);
+      border: none;
+      background-color: $main-color;
+      height: 100%;
+      width: 40px;
+      cursor: pointer;
+      border-radius: 0px 5px 5px 0px;
+      transition: 0.2s ease all;
+
+      &:hover {
+        background-color: lightgray;
+      }
+    }
+  }
+}

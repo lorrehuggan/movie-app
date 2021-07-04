@@ -1,22 +1,6 @@
 @import '../Sass/variables';
 @import '../Sass/mixin';
 
-.menu {
-  width: 50%;
-
-  ul {
-    list-style: none;
-    width: 100%;
-
-    li {
-      width: 100%;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-      letter-spacing: 1.5px;
-    }
-  }
-}
-
 .sidebar__right {
   position: fixed;
   right: 0;
@@ -24,7 +8,7 @@
   height: 100vh;
   z-index: 6;
 
-  .sidebar__left {
+  .sidebar__right-container {
     height: 100vh;
     width: 15vw;
     background-color: $main-back-dark;
@@ -44,81 +28,6 @@
       .sidebar__popular {
         width: 60%;
         margin-top: 2rem;
-      }
-
-      .sidebar__popular-list {
-        li {
-          position: relative;
-          @include flex(row, left);
-          p {
-            position: absolute;
-            font-size: 1rem;
-            top: 5px;
-
-            right: 0;
-            width: 45%;
-          }
-          small {
-            position: absolute;
-            font-size: 0.6rem;
-            letter-spacing: 3px;
-            bottom: 5px;
-            right: 0;
-            width: 45%;
-            text-transform: uppercase;
-          }
-        }
-      }
-
-      .popular_movie-img {
-        object-fit: contain;
-        width: 100px;
-
-        margin-right: 5px;
-        margin-left: 5px;
-        border-radius: 10px;
-        align-items: center;
-        text-align: center;
-      }
-
-      .sidebar__search {
-        position: absolute;
-        @include flex(row, center);
-        font-size: 1.2rem;
-        color: $main-color;
-        font-weight: 900;
-        width: 70%;
-        top: 0;
-        height: 10vh;
-        text-align: left;
-        z-index: 999;
-        form {
-          @include flex(row, center);
-          height: 40px;
-          input {
-            border: none;
-            height: 100%;
-            padding-left: 1rem;
-            color: gray;
-            font-size: 1.1rem;
-            outline: none;
-            border-radius: 5px 0px 0px 5px;
-          }
-          button {
-            @include flex(row, center);
-            border: none;
-            background-color: $main-color;
-            height: 100%;
-            width: 40px;
-            cursor: pointer;
-            border-radius: 0px 5px 5px 0px;
-            transition: 0.2s ease all;
-
-            &:hover {
-              background-color: lightgray;
-            }
-          }
-        }
       }
 
       .sidebar__header {

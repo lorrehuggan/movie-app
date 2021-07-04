@@ -14,8 +14,8 @@ nav {
   margin-left: auto 0;
 
   .nav__container {
-    width: 60%;
-    @include flex(row, center);
+    width: 1280px;
+    @include flex(row, space-between);
     ul {
       height: 10vh;
       width: 30%;
@@ -24,6 +24,7 @@ nav {
       li {
         font-size: 1.5rem;
         cursor: pointer;
+        transition: color 0.3s ease;
         &:hover {
           color: $main-color;
         }

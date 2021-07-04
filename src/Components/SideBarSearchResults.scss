@@ -1,0 +1,43 @@
+@import '../Sass/variables';
+@import '../Sass/mixin';
+
+.sidebar__popular-list {
+  li {
+    position: relative;
+    @include flex(row, left);
+    p {
+      position: absolute;
+      font-size: 1.1rem;
+      top: 5px;
+      right: 0;
+      width: 45%;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $main-color;
+      }
+    }
+    small {
+      position: absolute;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      bottom: 5px;
+      right: 0;
+      width: 45%;
+      text-transform: uppercase;
+      color: $main-color;
+    }
+  }
+}
+
+.popular_movie-img {
+  object-fit: contain;
+  width: 100px;
+  margin-right: 5px;
+  margin-left: 5px;
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+  &:hover {
+    transform: scale(1.08);
+  }
+}
