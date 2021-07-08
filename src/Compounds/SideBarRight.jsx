@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../Utils/axios';
 import './SideBarRight.scss';
-import SideBarSearch from './SideBarSearch';
-import SideBarSearchResults from './SideBarSearchResults';
-import SideBarPopularMovies from './SideBarPopularMovies';
-import SideBarFavorites from './SideBarFavorites';
+import SideBarSearch from '../Components/SideBarSearch';
+import SideBarSearchResults from '../Components/SideBarSearchResults';
+import SideBarPopularMovies from '../Components/SideBarPopularMovies';
+import SideBarFavorites from '../Components/SideBarFavorites';
 
 function SideBar({ fetchUrl, fetchQuery }) {
   const [movies, setMovies] = useState([]);

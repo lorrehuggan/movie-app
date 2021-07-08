@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './Nav.scss';
+import { Link } from 'react-router-dom';
 
 import UserNav from '../Elements/UserNav';
 
 function Nav({ log }) {
   const [showNav, setShowNav] = useState(false);
 
+  // show backgroung on scroll
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 40) {
@@ -30,15 +32,16 @@ function Nav({ log }) {
         }
       >
         <ul>
-          <li>TV Series</li>
-          <li>Movies</li>
-          <li>Animes</li>
+          <Link to="/tv">TV Series</Link>
+          <Link>Movies</Link>
+          <Link>Anime</Link>
         </ul>
-
-        <UserNav />
-        <button style={{ marginLeft: '2rem' }} onClick={userLoginHandler}>
-          log out
-        </button>
+        <div className="nav__user-log">
+          <UserNav />
+          <button style={{ marginLeft: '2rem' }} onClick={userLoginHandler}>
+            log out
+          </button>
+        </div>
       </div>
     </nav>
   );

@@ -2,24 +2,23 @@ import React, { useState } from 'react';
 import Row from '../Components/Row';
 import request from '../Utils/request';
 import Banner from '../Components/Banner';
-import './Body.scss';
-import SideBarRight from '../Components/SideBarRight';
-import SideBarLeft from '../Components/SideBarLeft';
+import './Home.scss';
+import SideBarRight from '../Compounds/SideBarRight';
+import SideBarLeft from '../Compounds/SideBarLeft';
 import Nav from '../Components/Nav';
 
-function Body({ userLogin }) {
-  const userLoginHandler = () => {
-    userLogin(false);
-  };
+function Home() {
   return (
     <section className="body">
-      <Nav log={userLogin} />
       <SideBarRight
         fetchUrl={request.fetchTrending}
         fetchQuery={request.fetchQuerySearch}
       />
+
       <SideBarLeft />
+
       <Banner />
+
       <Row
         isMovieRow={true}
         isLargeRow={true}
@@ -50,9 +49,8 @@ function Body({ userLogin }) {
         title="Documentary"
         fetchUrl={request.fetchDocumentary}
       />
-      <button onClick={userLoginHandler}>log out </button>
     </section>
   );
 }
 
-export default Body;
+export default Home;

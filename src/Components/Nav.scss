@@ -33,6 +33,10 @@ nav {
   }
 }
 
+.nav__user-log {
+  @include flex(row, space-between);
+}
+
 .nav-black {
   background-color: $main-back-dark;
   transition: background-color 0.5s ease;

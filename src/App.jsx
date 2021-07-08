@@ -1,8 +1,12 @@
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
 import request from './Utils/request';
 
-import Body from './Compounds/Body';
+import Home from './Pages/Home';
+import Nav from './Components/Nav';
+import TVSeries from './Pages/TvSeries';
+import TvSeries from './Pages/TvSeries';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -14,7 +18,16 @@ function App() {
   return (
     <div className="App">
       {isLoggedIn ? (
-        <Body userLogin={setIsLoggedIn} />
+        <>
+          <Router>
+            <Nav log={setIsLoggedIn} />
+            <Home userLogin={setIsLoggedIn} />
+            <Switch>
+              <Route path="/" component={Home}></Route>
+              <Route path="/tv" component={TvSeries}></Route>
+            </Switch>
+          </Router>
+        </>
       ) : (
         <div>
           <h1
