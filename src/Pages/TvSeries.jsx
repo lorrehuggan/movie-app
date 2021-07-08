@@ -4,6 +4,7 @@ import request from '../Utils/request';
 import Banner from '../Components/Banner';
 import SideBarRight from '../Compounds/SideBarRight';
 import SideBarLeft from '../Compounds/SideBarLeft';
+import './TvSeries.scss';
 
 function TvSeries() {
   return (
@@ -14,14 +15,18 @@ function TvSeries() {
       />
 
       <SideBarLeft />
-
-      <Banner />
-
+      <div className="body__container"></div>
       <Row
         isMovieRow={true}
         isLargeRow={true}
-        title="Trending Now"
-        fetchUrl={request.fetchTrending}
+        title="Tv Popular"
+        fetchUrl={request.fetchTvPopular}
+      />
+      <Row
+        isMovieRow={true}
+        isLargeRow={true}
+        title="Tv Popular"
+        fetchUrl={request.fetchTvPopular2}
       />
     </section>
   );

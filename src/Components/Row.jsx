@@ -4,6 +4,7 @@ import './Row.scss';
 import { AiFillCaretRight, AiFillCaretLeft } from 'react-icons/ai';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
+import Movie from './Movie';
 
 const base_img_url = 'https://image.tmdb.org/t/p/original';
 
@@ -94,26 +95,12 @@ function Row({ title, fetchUrl, isLargeRow, isMovieRow }) {
       <div style={translateX} className="row__posters">
         {movies.map((movie) => {
           return (
-            <div key={movie.id}>
-              <div className="poster__img-container">
-                <h2 className="poster__img-container__text">
-                  {isLargeRow ? '' : movie.name || movie.title}
-                </h2>
-                {!isLargeRow && <div className="poster__img-gradient"></div>}
-                <img
-                  onClick={() => handleClick(movie)}
-                  className={
-                    isLargeRow ? 'row__poster' : 'row__poster-backdrop'
-                  }
-                  src={`${base_img_url}${
-                    isLargeRow
-                      ? movie.poster_path
-                      : movie.backdrop_path || movie.poster_path
-                  }`}
-                  alt={movie.name || movie.title}
-                />
-              </div>
-            </div>
+            <Movie
+              movie={movie}
+              isLargeRow={isLargeRow}
+              handleClick={handleClick}
+              base_img_url={base_img_url}
+            />
           );
         })}
       </div>

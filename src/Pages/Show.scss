@@ -1,0 +1,15 @@
+@import '../Sass/mixin';
+@import '../Sass/variables';
+
+.show {
+  height: 100vh;
+  width: 100vw;
+
+  @include flex(row, center);
+  .show__container {
+    width: 1280px;
+  }
+  h1 {
+    color: wheat;
+  }
+}

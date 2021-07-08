@@ -33,7 +33,7 @@ function Nav({ log }) {
       >
         <ul>
           <Link to="/tv">TV Series</Link>
-          <Link>Movies</Link>
+          <Link to="/">Movies</Link>
           <Link>Anime</Link>
         </ul>
         <div className="nav__user-log">

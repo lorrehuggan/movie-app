@@ -1,4 +1,5 @@
 import React from 'react';
+import Movie from './Movie';
 import './SideBarPopularMovies.scss';
 
 function SideBarPopularMovies({ top3, base_img_url }) {

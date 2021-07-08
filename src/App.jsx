@@ -5,8 +5,8 @@ import request from './Utils/request';
 
 import Home from './Pages/Home';
 import Nav from './Components/Nav';
-import TVSeries from './Pages/TvSeries';
 import TvSeries from './Pages/TvSeries';
+import Show from './Pages/Show';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -14,17 +14,18 @@ function App() {
   const setLog = () => {
     setIsLoggedIn(true);
   };
-
+  //:id = variable path
   return (
     <div className="App">
       {isLoggedIn ? (
         <>
           <Router>
             <Nav log={setIsLoggedIn} />
-            <Home userLogin={setIsLoggedIn} />
             <Switch>
-              <Route path="/" component={Home}></Route>
-              <Route path="/tv" component={TvSeries}></Route>
+              <Route exact path="/" component={Home} />
+              <Route path="/tv" component={TvSeries} />
+
+              <Route path="/show/:id" component={Show} />
             </Switch>
           </Router>
         </>
