@@ -8,6 +8,7 @@ import Nav from './Components/Nav';
 import TvSeries from './Pages/TvSeries';
 import Show from './Pages/Show';
 import Login from './Compounds/Login';
+import SignUp from './Compounds/SignUp';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -30,7 +31,7 @@ function App() {
           </Router>
         </>
       ) : (
-        <Login login={setIsLoggedIn} />
+        <SignUp login={setIsLoggedIn} />
       )}
     </div>
   );

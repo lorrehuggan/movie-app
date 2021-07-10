@@ -10,5 +10,5 @@ const app = firebase.initializeApp({
   appId: process.env.REACT_APP_FIREBASE_MESSAGING_APP_ID,
 });
 
-
-export 
+export const auth = app.auth();
+export default app;

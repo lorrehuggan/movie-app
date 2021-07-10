@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './Login.scss';
+import './SignUp.scss';
 import Logo from '../Elements/Logo';
 import axios from '../Utils/axios';
 import request from '../Utils/request';
 
-function Login({ login }) {
+function SignUp({ login }) {
   const [movie, setMovie] = useState([]);
   const bannerImgPath = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
 
@@ -22,20 +22,21 @@ function Login({ login }) {
   }, []);
   return (
     <div
-      className="login"
+      className="signup"
       style={{
         backgroundImage: `url(${bannerImgPath})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center center',
       }}
     >
-      <div className="login-gradient-top"></div>
-      <div className="login-gradient-btm"></div>
-      <Logo className="login-logo" />
+      <div className="signup-gradient-top"></div>
+      <div className="signup-gradient-btm"></div>
+      <Logo className="signup-logo" />
 
-      <div className="login__container">
-        <h1>Log In</h1>
-        <form className="login__form">
+      <div className="signup__container">
+        <h1>Sign Up</h1>
+        <form className="signup__form">
+          <input required placeholder="Name" type="text" />
           <input required placeholder="Email" type="text" />
 
           <input required placeholder="Password" type="password" />
@@ -47,12 +48,12 @@ function Login({ login }) {
           >
             Enter
           </button>
-          <div className="login__form-message">
-            <small> Sign Up </small>
+          <div className="signup__form-message">
+            <small> Already a member? Login </small>
             <small> Forgot Password?</small>
           </div>
         </form>
-        <div className="login__background">
+        <div className="signup__background">
           <img src="" alt="" />
         </div>
       </div>
@@ -60,4 +61,4 @@ function Login({ login }) {
   );
 }
 
-export default Login;
+export default SignUp;

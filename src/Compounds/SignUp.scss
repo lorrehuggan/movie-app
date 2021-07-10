@@ -1,13 +1,14 @@
 @import '../Sass/variables';
 @import '../Sass/mixin';
 
-.login {
+.signup {
   @include flex(column, center);
   height: 100vh;
   width: 100vw;
   position: relative;
+  overflow: hidden;
 
-  .login-gradient-top {
+  .signup-gradient-top {
     position: absolute;
     top: 0;
     left: 0;
@@ -20,7 +21,7 @@
       transparent
     );
   }
-  .login-gradient-btm {
+  .signup-gradient-btm {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -29,7 +30,7 @@
     background: linear-gradient(to top, #0f0f0f, #0f0f0f83, transparent);
   }
 
-  .login__container {
+  .signup__container {
     @include flex(column, center);
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(12px);
@@ -45,7 +46,7 @@
     }
 
     padding: 4rem;
-    .login__form {
+    .signup__form {
       @include flex(column, center);
       width: calc(4rem * 4);
       height: 20rem;
@@ -82,7 +83,7 @@
           background-color: $main-color-hover;
         }
       }
-      .login__form-message {
+      .signup__form-message {
         @include flex(column, left);
         width: 100%;
         margin-top: 1rem;
