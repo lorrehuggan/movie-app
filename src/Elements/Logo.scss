@@ -1,0 +1,16 @@
+@import '../Sass/mixin';
+@import '../Sass/variables';
+
+.sidebar__logo {
+  position: absolute;
+  @include flex(row, left);
+  font-size: 1.2rem;
+  color: $main-color;
+  font-weight: 700;
+
+  top: 0;
+  height: 10vh;
+  text-align: left;
+  font-family: $logo-font;
+  font-size: 2.5rem;
+}

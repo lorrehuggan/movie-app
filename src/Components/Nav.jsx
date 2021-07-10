@@ -37,10 +37,8 @@ function Nav({ log }) {
           <Link>Anime</Link>
         </ul>
         <div className="nav__user-log">
+          <button onClick={userLoginHandler}>Log out</button>
           <UserNav />
-          <button style={{ marginLeft: '2rem' }} onClick={userLoginHandler}>
-            log out
-          </button>
         </div>
       </div>
     </nav>

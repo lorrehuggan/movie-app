@@ -13,6 +13,8 @@ import { FaUserFriends } from 'react-icons/fa';
 import { VscFileMedia } from 'react-icons/vsc';
 import { gsap } from 'gsap';
 
+import Logo from '../Elements/Logo';
+
 function SideBar() {
   const logo = useRef();
 
@@ -29,9 +31,8 @@ function SideBar() {
     <section className="sidebar">
       <div className="sidebar__left">
         <div className="sidebar__container">
-          <div ref={logo} className="sidebar__logo ">
-            NETLORRE
-          </div>
+          <Logo />
+
           <div className="sidebar__menu menu">
             <div className="sidebar__header">
               <h3>Menu</h3>

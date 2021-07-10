@@ -6,7 +6,6 @@ function UserNav() {
   return (
     <div className="user__id">
       <img src={uiFace} alt="uiFace" />
-      <small>Akachi</small>
     </div>
   );
 }
