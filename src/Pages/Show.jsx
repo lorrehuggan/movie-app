@@ -7,6 +7,7 @@ import { API_KEY } from '../Utils/request';
 function Show({ match }) {
   let { id } = match.params;
   let [movieDetails, setMovieDetails] = useState('');
+  let [movieGenres, setMovieGenres] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -24,18 +25,45 @@ function Show({ match }) {
     return <div>Error</div>;
   }
 
-  let { backdrop_path, original_title, overview, tagline, title } =
-    movieDetails;
+  let {
+    tagline,
+    backdrop_path,
+    original_title,
+    overview,
+    title,
+    genres,
+    runtime,
+    vote_average,
+  } = movieDetails;
+
+  let bannerImgPath = `https://image.tmdb.org/t/p/original${backdrop_path}`;
 
   return (
     <div className="show">
       <div className="show__container">
-        <BannerShow
-          original_title={original_title}
-          backdrop={backdrop_path}
-          overview={overview}
-          title={title}
-        />
+        <div className="show__container--header">
+          <h1 className="show_header">{original_title}</h1>
+
+          <div className="show__genre-container">
+            <div className="show_genre">
+              <p>{genres[0].name}</p>
+            </div>
+
+            <div className="show_runtime">
+              <p>{runtime}mins</p>
+            </div>
+            <div className="show_ratings">
+              <p>{vote_average}</p>
+            </div>
+          </div>
+
+          <p className="show_overview">{overview}</p>
+          <img
+            className="show_image"
+            src={bannerImgPath}
+            alt={original_title}
+          />
+        </div>
       </div>
     </div>
   );

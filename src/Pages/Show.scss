@@ -4,12 +4,83 @@
 .show {
   height: 100vh;
   width: 100vw;
-
   @include flex(row, center);
   .show__container {
     width: 1280px;
+    height: 90vh;
+    margin-top: 10vh;
+    .show__container--header {
+      position: relative;
+      .show_header {
+        width: calc(128px * 4);
+        font-size: calc(8px * (1.682 * 4));
+        color: white;
+        height: 400px;
+      }
+      .show_tagline {
+        color: white;
+      }
+      .show__genre-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: 64px;
+        margin-top: 2rem;
+        .show_genre {
+          color: white;
+          font-size: calc(8px * (1.682 * 2));
+        }
+      }
+
+      .show_ratings {
+        p {
+          color: white;
+          font-size: calc(8px * (1.682 * 2));
+        }
+      }
+
+      .show_runtime {
+        p {
+          color: white;
+          z-index: 999;
+          font-size: calc(8px * (1.682 * 2));
+        }
+      }
+
+      .show_overview {
+        font-size: calc(8px * (1.682 * 1.4));
+        line-height: calc(16px * 2);
+        letter-spacing: 0.5px;
+        color: white;
+        padding-right: 4rem;
+        width: 50%;
+        margin-top: 2rem;
+      }
+      .show_image {
+        width: calc(128px * 6);
+        height: 400px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 20px;
+      }
+      .show_production {
+        img {
+          width: 50px;
+        }
+      }
+    }
   }
-  h1 {
-    color: wheat;
+  .show__genres {
+    position: absolute;
+    top: calc(128px * 1.5);
+    left: 0;
+    font-size: 16px;
+    line-height: calc(16px * 1.5);
+    color: white;
+    padding-right: 4rem;
+    width: calc(128px * 4);
+    height: calc(128px * 4);
   }
 }
