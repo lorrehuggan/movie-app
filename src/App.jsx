@@ -25,7 +25,6 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/tv" component={TvSeries} />
-
               <Route path="/show/:id" component={Show} />
             </Switch>
           </Router>
