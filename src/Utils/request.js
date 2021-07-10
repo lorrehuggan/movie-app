@@ -1,4 +1,4 @@
-export const API_KEY = '50bd49490c949f378379634df53bce49';
+export const API_KEY = process.env.REACT_APP_API;
 
 const request = {
   fetchTrending: `3/trending/all/day?api_key=${API_KEY}`,
