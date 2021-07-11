@@ -49,7 +49,7 @@
     .signup__form {
       @include flex(column, center);
       width: calc(4rem * 4);
-      height: 20rem;
+      height: 27rem;
       z-index: 2;
 
       input {
@@ -60,6 +60,7 @@
         border-radius: 8px;
         font-size: 1rem;
         border: none;
+
         &:focus {
           outline: none;
           outline: 2px solid $main-color;

@@ -7,8 +7,8 @@ import Home from './Pages/Home';
 import Nav from './Components/Nav';
 import TvSeries from './Pages/TvSeries';
 import Show from './Pages/Show';
-import Login from './Compounds/Login';
-import SignUp from './Compounds/SignUp';
+import Login from './Pages/Login';
+import SignUp from './Pages/SignUp';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

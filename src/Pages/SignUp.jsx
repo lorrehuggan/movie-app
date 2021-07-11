@@ -40,6 +40,7 @@ function SignUp({ login }) {
           <input required placeholder="Email" type="text" />
 
           <input required placeholder="Password" type="password" />
+          <input required placeholder="Password Confirm" type="password" />
           <button
             onClick={() => {
               login(true);
