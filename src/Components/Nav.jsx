@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './Nav.scss';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { useAuth } from '../Context/AuthContext';
 
 import UserNav from '../Elements/UserNav';
 
-function Nav({ log }) {
+function Nav() {
   const [showNav, setShowNav] = useState(false);
+  const [error, setError] = useState();
+  const { logout } = useAuth();
+  const history = useHistory();
 
-  // show backgroung on scroll
+  // show background on scroll
+
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 40) {
@@ -18,9 +23,16 @@ function Nav({ log }) {
     });
   });
 
-  const userLoginHandler = () => {
-    log(false);
-  };
+  async function userLogOut() {
+    setError('');
+
+    try {
+      await logout();
+      history.push('/login');
+    } catch {
+      setError('Failed to logout');
+    }
+  }
 
   return (
     <nav>
@@ -35,9 +47,10 @@ function Nav({ log }) {
           <Link to="/tv">TV Series</Link>
           <Link to="/">Movies</Link>
           <Link>Anime</Link>
+          {error && <Link>{error}</Link>}
         </ul>
         <div className="nav__user-log">
-          <button onClick={userLoginHandler}>Log out</button>
+          <button onClick={userLogOut}>Log out</button>
           <UserNav />
         </div>
       </div>

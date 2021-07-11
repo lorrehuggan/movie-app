@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
+import { AuthProvider } from './Context/AuthContext';
 import request from './Utils/request';
 
 import Home from './Pages/Home';
@@ -11,29 +12,23 @@ import Login from './Pages/Login';
 import SignUp from './Pages/SignUp';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const setLog = () => {
-    setIsLoggedIn(true);
-  };
-  //:id = variable path
   return (
-    <div className="App">
-      {isLoggedIn ? (
+    <AuthProvider>
+      <div className="App">
         <>
           <Router>
-            <Nav log={setIsLoggedIn} />
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/signup" component={SignUp} />
+              <Route path="/home" component={Home} />
               <Route path="/tv" component={TvSeries} />
+              {/* :id = variable path */}
               <Route path="/show/:id" component={Show} />
             </Switch>
           </Router>
         </>
-      ) : (
-        <SignUp login={setIsLoggedIn} />
-      )}
-    </div>
+      </div>
+    </AuthProvider>
   );
 }
 

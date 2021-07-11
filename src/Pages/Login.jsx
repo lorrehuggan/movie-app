@@ -1,12 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useAuth } from '../Context/AuthContext';
 import './Login.scss';
 import Logo from '../Elements/Logo';
 import axios from '../Utils/axios';
 import request from '../Utils/request';
 
-function Login({ login }) {
+function Login() {
   const [movie, setMovie] = useState([]);
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(false);
+  const { login } = useAuth();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const history = useHistory();
   const bannerImgPath = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
+
+  //logging in
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      setError('');
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      history.push('/home');
+    } catch {
+      setError('Failed to login');
+    }
+    setLoading(false);
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -35,21 +59,37 @@ function Login({ login }) {
 
       <div className="login__container">
         <h1>Log In</h1>
-        <form className="login__form">
-          <input required placeholder="Email" type="text" />
-
-          <input required placeholder="Password" type="password" />
-          <button
-            onClick={() => {
-              login(true);
+        {error && (
+          <h4
+            style={{
+              backgroundColor: 'rgba(0, 0, 0, 0.8)',
+              color: 'red',
+              borderRadius: '16px',
+              padding: '1rem 1.5rem',
+              textTransform: 'uppercase',
+              width: '100%',
             }}
-            type="submit"
           >
-            Enter
-          </button>
+            {error}
+          </h4>
+        )}
+        <form onSubmit={handleSubmit} className="login__form">
+          <input ref={emailRef} required placeholder="Email" type="text" />
+
+          <input
+            ref={passwordRef}
+            required
+            placeholder="Password"
+            type="password"
+          />
+          <button type="submit">Enter</button>
           <div className="login__form-message">
-            <small> Sign Up </small>
-            <small> Forgot Password?</small>
+            <Link to="signup">
+              <small> Sign Up </small>
+            </Link>
+            <Link>
+              <small> Forgot Password?</small>
+            </Link>
           </div>
         </form>
         <div className="login__background">

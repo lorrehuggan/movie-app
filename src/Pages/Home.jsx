@@ -10,6 +10,7 @@ import Nav from '../Components/Nav';
 function Home() {
   return (
     <section className="body">
+      <Nav />
       <SideBarRight
         fetchUrl={request.fetchTrending}
         fetchQuery={request.fetchQuerySearch}

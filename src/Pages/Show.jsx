@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BannerShow from '../Components/BannerShow';
 import './Show.scss';
+import Nav from '../Components/Nav';
 import axios from '../Utils/axios';
 import { API_KEY } from '../Utils/request';
 
@@ -40,6 +41,7 @@ function Show({ match }) {
 
   return (
     <div className="show">
+      <Nav />
       <div className="show__container">
         <div className="show__container--header">
           <h1 className="show_header">{original_title}</h1>
