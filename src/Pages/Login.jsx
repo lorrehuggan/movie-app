@@ -10,7 +10,7 @@ function Login() {
   const [movie, setMovie] = useState([]);
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
-  const { login } = useAuth();
+  const { login, currentUser } = useAuth();
   const emailRef = useRef();
   const passwordRef = useRef();
   const history = useHistory();
@@ -55,10 +55,12 @@ function Login() {
     >
       <div className="login-gradient-top"></div>
       <div className="login-gradient-btm"></div>
+      {loading && <div className="login_loading"></div>}
       <Logo className="login-logo" />
 
       <div className="login__container">
         <h1>Log In</h1>
+        {currentUser && <h1>hello</h1>}
         {error && (
           <h4
             style={{

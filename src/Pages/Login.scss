@@ -7,6 +7,16 @@
   width: 100vw;
   position: relative;
 
+  .login_loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: crimson;
+    animation: loading 2.5s ease infinite;
+  }
+
   .login-gradient-top {
     position: absolute;
     top: 0;
@@ -32,7 +42,7 @@
   .login__container {
     @include flex(column, center);
     background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(12px);
+    // backdrop-filter: blur(12px);
     border-radius: 16px;
     border: 2px solid white;
     height: 100vh;
@@ -103,5 +113,17 @@
         }
       }
     }
+  }
+}
+
+@keyframes loading {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
   }
 }

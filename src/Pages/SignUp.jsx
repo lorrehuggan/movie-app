@@ -35,7 +35,7 @@ function SignUp() {
     } catch {
       setError('Failed to create an account');
     }
-    setLoading(true);
+    setLoading(false);
   }
 
   // fetch random background image
@@ -62,6 +62,7 @@ function SignUp() {
         backgroundPosition: 'center center',
       }}
     >
+      {loading && <div className="login_loading"></div>}
       <div className="signup-gradient-top"></div>
       <div className="signup-gradient-btm"></div>
       <Logo className="signup-logo" />
@@ -102,7 +103,7 @@ function SignUp() {
             Enter
           </button>
           <div className="signup__form-message">
-            <Link to="login">
+            <Link to="/login">
               <small> Already a member? Login </small>
             </Link>
             <Link>
