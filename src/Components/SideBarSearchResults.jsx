@@ -29,8 +29,14 @@ function SideBarSearchResults({
           );
         })}
       </ul>
-      <button onClick={prevPage}>prev</button>
-      <button onClick={nextPage}>next</button>
+      <div className="search__result-buttons">
+        <button className="search__result-button" onClick={prevPage}>
+          Prev
+        </button>
+        <button className="search__result-button" onClick={nextPage}>
+          Next
+        </button>
+      </div>
     </div>
   );
 }

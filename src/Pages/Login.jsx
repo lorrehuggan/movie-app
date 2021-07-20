@@ -25,7 +25,7 @@ function Login() {
       setError('');
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push('/home');
+      history.push('/');
     } catch {
       setError('Failed to login');
     }
@@ -44,6 +44,7 @@ function Login() {
     }
     fetchData();
   }, []);
+
   return (
     <div
       className="login"
@@ -55,12 +56,13 @@ function Login() {
     >
       <div className="login-gradient-top"></div>
       <div className="login-gradient-btm"></div>
+
       {loading && <div className="login_loading"></div>}
       <Logo className="login-logo" />
 
       <div className="login__container">
         <h1>Log In</h1>
-        {currentUser && <h1>hello</h1>}
+
         {error && (
           <h4
             style={{
@@ -75,9 +77,9 @@ function Login() {
             {error}
           </h4>
         )}
+
         <form onSubmit={handleSubmit} className="login__form">
           <input ref={emailRef} required placeholder="Email" type="text" />
-
           <input
             ref={passwordRef}
             required

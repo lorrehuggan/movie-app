@@ -41,3 +41,25 @@
     transform: scale(1.08);
   }
 }
+.search__result-buttons {
+  @include flex(row, space-between);
+  width: 100%;
+}
+.search__result-button {
+  margin-right: 1rem;
+  width: 50%;
+  height: 2.5rem;
+  border: none;
+  background-color: $main-color;
+  color: white;
+  font-size: 1rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  font-weight: 700;
+  &:hover,
+  &:active {
+    background-color: $main-color-hover;
+  }
+}
