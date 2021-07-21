@@ -1,5 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './SideBarLeft.scss';
+
+//React Icons
 import {
   AiFillHome,
   AiOutlineUsergroupAdd,
@@ -13,6 +15,7 @@ import { FaUserFriends } from 'react-icons/fa';
 import { VscFileMedia } from 'react-icons/vsc';
 import { gsap } from 'gsap';
 
+//Images
 import Logo from '../Elements/Logo';
 
 function SideBar() {

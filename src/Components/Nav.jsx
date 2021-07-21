@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Nav.scss';
+//React Router
 import { Link, useHistory } from 'react-router-dom';
+
+//User Auth
 import { useAuth } from '../Context/AuthContext';
 
+//User
 import UserNav from '../Elements/UserNav';
 
 function Nav() {

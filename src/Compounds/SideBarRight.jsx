@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
+
+// Axios
 import axios from '../Utils/axios';
 import './SideBarRight.scss';
+
+//Components
 import SideBarSearch from '../Components/SideBarSearch';
 import SideBarSearchResults from '../Components/SideBarSearchResults';
 import SideBarPopularMovies from '../Components/SideBarPopularMovies';

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Row from '../Components/Row';
 import request from '../Utils/request';
-import Banner from '../Components/Banner';
+import Banner from '../Components/Banner/Banner';
 import './Home.scss';
 import SideBarRight from '../Compounds/SideBarRight';
 import SideBarLeft from '../Compounds/SideBarLeft';
-import Nav from '../Components/Nav';
+import Nav from '../Components/Nav/Nav';
 
 function Home() {
   return (
@@ -16,11 +16,11 @@ function Home() {
         fetchQuery={request.fetchQuerySearch}
       />
 
-      <SideBarLeft />
+      {/* <SideBarLeft /> */}
 
       <Banner />
 
-      <Row
+      {/* <Row
         isMovieRow={true}
         isLargeRow={true}
         title="Trending Now"
@@ -49,7 +49,7 @@ function Home() {
         isLargeRow={true}
         title="Documentary"
         fetchUrl={request.fetchDocumentary}
-      />
+      /> */}
     </section>
   );
 }
