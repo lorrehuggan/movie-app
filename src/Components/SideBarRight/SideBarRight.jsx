@@ -4,7 +4,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from '../../Utils/axios';
 
 //Components
-import SideBarSearch from '../SideBarSearch';
+import SideBarSearch from '../Search/SideBarSearch';
 import SideBarSearchResults from '../SideBarSearchResults';
 import SideBarPopularMovies from '../SideBarPopularMovies';
 import SideBarFavorites from '../SideBarFavorites';

@@ -13,7 +13,7 @@ export const Wrapper = styled.section`
 
 export const Container = styled.div`
   height: 85vh;
-  width: 15vw;
+  width: 25rem;
   color: white;
   ${flex};
 `;
@@ -21,10 +21,10 @@ export const Container = styled.div`
 export const SideContainer = styled.div`
   height: 100vh;
   width: 15vw;
-  background-color: ${({ theme }) => theme.colors.primaryDark};
+  background-color: ${ ({ theme }) => theme.colors.primaryDark};
   border-left: 1px solid rgba(255, 255, 255, 0.05);
   position: absolute;
-  left: ${({ sidebar }) => (sidebar ? '0' : '350px')};
+  left: ${({ sidebar }) => (sidebar ? '0' : '21rem')};
   top: 0;
   position: relative;
   ${flex};

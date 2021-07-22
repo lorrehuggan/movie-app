@@ -23,6 +23,7 @@ import { MdAdd } from 'react-icons/md';
 
 function Banner() {
   const [movie, setMovie] = useState([]);
+  const [loading, setLoading] = useState(true);
   const bannerImgPath = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
 
   function truncate(string, n) {
@@ -32,20 +33,32 @@ function Banner() {
   useEffect(() => {
     async function fetchData() {
       const requestFetch = await axios.get(request.fetchTrending);
-
       setMovie(
         requestFetch.data.results[
           Math.floor(Math.random() * requestFetch.data.results.length - 1)
         ]
       );
+      setLoading(false);
     }
     fetchData();
   }, []);
 
+  //Loading Banner
+
+  if (loading) {
+    return (
+      <Wrapper>
+        <BannerContainer>
+          <Header2>Loading...</Header2>
+        </BannerContainer>
+      </Wrapper>
+    );
+  }
+
   return (
     <Wrapper bannerPath={bannerImgPath}>
       <Gradient />
-      <Gradient bottom="10.8rem" direction="bottom" opacity="0.9" />
+      <Gradient bottom="17.5rem" direction="bottom" opacity="0.9" />
       <BannerContainer>
         <Container>
           <Header2 className="banner__heading">
@@ -74,9 +87,6 @@ function Banner() {
           </Icon>
         </BannerButton>
       </ButtonsContainer>
-
-      {/* <div className="banner__fade-bottom"></div>
-      <div className="banner__fade-top"></div> */}
     </Wrapper>
   );
 }

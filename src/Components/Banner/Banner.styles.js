@@ -21,7 +21,7 @@ export const Gradient = styled.section`
     hsla(0, 0%, 6%, 0)
   );
   width: 100%;
-  height: 70%;
+  height: 50%;
   position: absolute;
   opacity: ${({ opacity }) => (opacity ? opacity : '1')};
   bottom: ${({ bottom }) => (bottom ? bottom : '0')};
