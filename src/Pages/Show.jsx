@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BannerShow from '../Components/BannerShow';
 import './Show.scss';
-import Nav from '../Components/Nav';
+import Nav from '../Components/Nav/Nav';
 import axios from '../Utils/axios';
 import { API_KEY } from '../Utils/request';
 

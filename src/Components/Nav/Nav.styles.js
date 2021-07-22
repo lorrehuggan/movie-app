@@ -13,12 +13,15 @@ export const Navigation = styled.nav`
   left: 0;
   position: fixed;
   z-index: 4;
-  padding: 2rem 0rem; ;
+  padding: 2rem 0rem;
 `;
 
 export const NavContainer = styled.div`
   ${flex}
   width: 1280px;
+  background-color: ${({ showNav, theme }) =>
+    showNav ? theme.colors.primaryDark : 'transparent'};
+  transition: background-color 0.5s ease;
 `;
 
 export const LinksContainer = styled.ul`

@@ -1,14 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 // Axios
-import axios from '../Utils/axios';
-import './SideBarRight.scss';
+import axios from '../../Utils/axios';
 
 //Components
-import SideBarSearch from '../Components/SideBarSearch';
-import SideBarSearchResults from '../Components/SideBarSearchResults';
-import SideBarPopularMovies from '../Components/SideBarPopularMovies';
-import SideBarFavorites from '../Components/SideBarFavorites';
+import SideBarSearch from '../SideBarSearch';
+import SideBarSearchResults from '../SideBarSearchResults';
+import SideBarPopularMovies from '../SideBarPopularMovies';
+import SideBarFavorites from '../SideBarFavorites';
+
+//Styles
+import {
+  Wrapper,
+  Container,
+  SideContainer,
+  Popular,
+  Header,
+} from './SideBarRight.styles';
+
+//SideBar COntext
+import { SideBarContext } from '../../Context/SideBarContext';
+
+import { Header3 } from '../FontAttr/type';
 
 function SideBar({ fetchUrl, fetchQuery }) {
   const [movies, setMovies] = useState([]);
@@ -16,6 +29,12 @@ function SideBar({ fetchUrl, fetchQuery }) {
   const [searchValue, setSearchValue] = useState('');
   const [firstMov, setFirstMov] = useState(0);
   const [lastMov, setLastMov] = useState(5);
+
+  // use context
+
+  const { openSideBar, setOpenSideBar } = useContext(SideBarContext);
+
+  //base image url
   const base_img_url = 'https://image.tmdb.org/t/p/original';
 
   // fetch movie for popular movies and favourites
@@ -76,9 +95,9 @@ function SideBar({ fetchUrl, fetchQuery }) {
   };
 
   return (
-    <section className="sidebar__right">
-      <div className="sidebar__right-container">
-        <div className="sidebar__container">
+    <Wrapper>
+      <SideContainer sidebar={openSideBar} className="sidebar__right-container">
+        <Container justify="space-between">
           <SideBarSearch
             searchSubmit={searchSubmit}
             searchHandler={searchHandler}
@@ -92,25 +111,25 @@ function SideBar({ fetchUrl, fetchQuery }) {
             />
           ) : (
             <React.Fragment>
-              <div className="sidebar__popular">
-                <div className="sidebar__header">
-                  <h3>Popular Movies</h3>
-                </div>
+              <Popular>
+                <Header>
+                  <Header3>Popular Movies</Header3>
+                </Header>
 
                 <SideBarPopularMovies top3={top3} base_img_url={base_img_url} />
-              </div>
-              <div className="sidebar__popular">
-                <div className="sidebar__header">
-                  <h3>Favorites</h3>
-                </div>
+              </Popular>
+              <Popular>
+                <Header className="sidebar__header">
+                  <Header3>Favorites</Header3>
+                </Header>
 
                 <SideBarFavorites fav={fav} base_img_url={base_img_url} />
-              </div>
+              </Popular>
             </React.Fragment>
           )}
-        </div>
-      </div>
-    </section>
+        </Container>
+      </SideContainer>
+    </Wrapper>
   );
 }
 

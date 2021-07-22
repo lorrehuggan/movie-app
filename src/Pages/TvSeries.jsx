@@ -1,10 +1,9 @@
 import React from 'react';
 import Row from '../Components/Row';
 import request from '../Utils/request';
-import Banner from '../Components/Banner';
-import SideBarRight from '../Compounds/SideBarRight';
+import SideBarRight from '../Components/SideBarRight/SideBarRight';
 import SideBarLeft from '../Compounds/SideBarLeft';
-import Nav from '../Components/Nav';
+import Nav from '../Components/Nav/Nav';
 import './TvSeries.scss';
 
 function TvSeries() {
