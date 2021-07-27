@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 //Providers
 import { AuthProvider } from './Context/AuthContext';
-import { SideBarContext } from './Context/SideBarContext';
+import { SideBarContext, SideBarLeftContext } from './Context/SideBarContext';
 
 //Private Route Helper
 import PrivateRoute from './Utils/PrivateRoute';
@@ -32,6 +32,7 @@ function App() {
               <Switch>
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={SignUp} />
+
                 <SideBarContext.Provider
                   value={{ openSideBar, setOpenSideBar }}
                 >

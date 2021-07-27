@@ -56,10 +56,8 @@ function Nav() {
 
   const sideBarToggle = () => {
     if (openSideBar === true) {
-      console.log('ouuut');
       setOpenSideBar(false);
     } else {
-      console.log('innn');
       setOpenSideBar(true);
     }
   };
@@ -75,16 +73,14 @@ function Nav() {
           <Links to="/tv">TV Series</Links>
           <Links to="/">Movies</Links>
           <Links>Anime</Links>
-          <Links color="#61c0dd" hover="hsl(194, 75%, 42%)">
-            Menu
-          </Links>
           <Links
             onClick={sideBarToggle}
             color="#61c0dd"
             hover="hsl(194, 75%, 42%)"
           >
-            Search
+            Menu
           </Links>
+
           <Links
             onClick={userLogOut}
             color="#61c0dd"

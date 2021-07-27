@@ -5,7 +5,7 @@ import Row from '../../Components/MovieRow/Row';
 import request from '../../Utils/request';
 import Banner from '../../Components/Banner/Banner';
 import SideBarRight from '../../Components/SideBarRight/SideBarRight';
-import SideBarLeft from '../../Compounds/SideBarLeft';
+import SideBarLeft from '../../Components/SideBarLeft/SideBarLeft';
 import Nav from '../../Components/Nav/Nav';
 
 //Styles
@@ -21,7 +21,7 @@ function Home() {
         fetchQuery={request.fetchQuerySearch}
       />
 
-      {/* <SideBarLeft /> */}
+      <SideBarLeft />
 
       <Banner />
 
