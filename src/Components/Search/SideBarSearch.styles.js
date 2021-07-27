@@ -38,8 +38,7 @@ export const Button = styled.button`
   width: 40px;
   cursor: pointer;
   border-radius: 0px 5px 5px 0px;
-  transition: 0.2s ease all;
-
+  transition: background-color 0.2s ease;
   &:hover {
     background-color: ${({ theme }) => theme.colors.primaryAlt};
   }

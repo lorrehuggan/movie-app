@@ -1,7 +1,7 @@
 export const theme = {
   colors: {
     primary: '#61c0dd',
-    PrimaryAlt: 'hsl(194, 75%, 42%)',
+    primaryAlt: 'hsl(194, 75%, 42%)',
     primaryDark: '#0f0f0f',
   },
   fontSize: {

@@ -5,23 +5,22 @@ import axios from '../../Utils/axios';
 
 //Components
 import SideBarSearch from '../Search/SideBarSearch';
-import SideBarSearchResults from '../SideBarSearchResults';
+import SideBarSearchResults from '../SearchResults/SideBarSearchResults';
 import SideBarPopularMovies from '../SideBarPopularMovies';
-import SideBarFavorites from '../SideBarFavorites';
+import SideBarFavorites from '../SideBarFav/SideBarFavorites.jsx';
 
 //Styles
 import {
   Wrapper,
-  Container,
   SideContainer,
   Popular,
   Header,
+  MovieWrapper,
 } from './SideBarRight.styles';
+import { Header3, Paragraph } from '../FontAttr/type';
 
-//SideBar COntext
+//SideBar Context
 import { SideBarContext } from '../../Context/SideBarContext';
-
-import { Header3 } from '../FontAttr/type';
 
 function SideBar({ fetchUrl, fetchQuery }) {
   const [movies, setMovies] = useState([]);
@@ -70,7 +69,7 @@ function SideBar({ fetchUrl, fetchQuery }) {
 
   // set sidebar movie list to only # of movies
 
-  let top3 = movies.slice(0, 3);
+  let top3 = movies.slice(6, 12);
   let searchResults = searchedMovies.slice(firstMov, lastMov);
   let fav = movies.slice(15, 18);
 
@@ -96,38 +95,36 @@ function SideBar({ fetchUrl, fetchQuery }) {
 
   return (
     <Wrapper>
-      <SideContainer sidebar={openSideBar} className="sidebar__right-container">
-        <Container justify="space-between">
-          <SideBarSearch
-            searchSubmit={searchSubmit}
-            searchHandler={searchHandler}
+      <SideContainer sidebar={openSideBar}>
+        <SideBarSearch
+          searchSubmit={searchSubmit}
+          searchHandler={searchHandler}
+        />
+        {searchValue ? (
+          <SideBarSearchResults
+            searchResults={searchResults}
+            base_img_url={base_img_url}
+            prevPage={prevPage}
+            nextPage={nextPage}
           />
-          {searchValue ? (
-            <SideBarSearchResults
-              searchResults={searchResults}
-              base_img_url={base_img_url}
-              prevPage={prevPage}
-              nextPage={nextPage}
-            />
-          ) : (
-            <React.Fragment>
-              <Popular>
-                <Header>
-                  <Header3>Popular Movies</Header3>
-                </Header>
+        ) : (
+          <MovieWrapper>
+            <Popular>
+              <Header>
+                <Paragraph>Popular Movies</Paragraph>
+              </Header>
 
-                <SideBarPopularMovies top3={top3} base_img_url={base_img_url} />
-              </Popular>
-              <Popular>
-                <Header className="sidebar__header">
-                  <Header3>Favorites</Header3>
-                </Header>
+              <SideBarPopularMovies top3={top3} base_img_url={base_img_url} />
+            </Popular>
+            {/* <Popular>
+              <Header className="sidebar__header">
+                <Paragraph>Favorites</Paragraph>
+              </Header>
 
-                <SideBarFavorites fav={fav} base_img_url={base_img_url} />
-              </Popular>
-            </React.Fragment>
-          )}
-        </Container>
+              <SideBarFavorites fav={fav} base_img_url={base_img_url} />
+            </Popular> */}
+          </MovieWrapper>
+        )}
       </SideContainer>
     </Wrapper>
   );

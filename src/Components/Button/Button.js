@@ -15,6 +15,6 @@ export const Button = styled.button`
   text-transform: uppercase;
   &:hover,
   &:active {
-    background-color: hsl(194, 75%, 42%);
+    background-color: ${({ theme }) => theme.colors.primaryAlt};
   }
 `;

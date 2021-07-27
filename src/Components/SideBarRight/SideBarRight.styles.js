@@ -11,17 +11,10 @@ export const Wrapper = styled.section`
   z-index: 6;
 `;
 
-export const Container = styled.div`
-  height: 85vh;
-  width: 25rem;
-  color: white;
-  ${flex};
-`;
-
 export const SideContainer = styled.div`
   height: 100vh;
   width: 15vw;
-  background-color: ${ ({ theme }) => theme.colors.primaryDark};
+  background-color: ${({ theme }) => theme.colors.primaryDark};
   border-left: 1px solid rgba(255, 255, 255, 0.05);
   position: absolute;
   left: ${({ sidebar }) => (sidebar ? '0' : '21rem')};
@@ -43,4 +36,14 @@ export const Header = styled.div`
   color: ${({ theme }) => theme.colors.primary};
   letter-spacing: 3px;
   text-transform: uppercase;
+`;
+
+export const MovieWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  margin-top: 2rem;
 `;

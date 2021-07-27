@@ -14,7 +14,7 @@ function SideBarPopularMovies({ top3, base_img_url }) {
                       `}
               alt={movie.name || movie.title}
             />
-            <p>{movie.name || movie.title}</p>
+            <p style={{ color: 'white' }}>{movie.name || movie.title}</p>
             <small>Rating {movie.vote_average} </small>
           </li>
         );
