@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 //Components
-import Row from '../../Components/Row';
+import Row from '../../Components/MovieRow/Row';
 import request from '../../Utils/request';
 import Banner from '../../Components/Banner/Banner';
 import SideBarRight from '../../Components/SideBarRight/SideBarRight';

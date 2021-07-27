@@ -1,5 +1,5 @@
 import React from 'react';
-import Row from '../Components/Row';
+import Row from '../Components/MovieRow/Row';
 import request from '../Utils/request';
 import SideBarRight from '../Components/SideBarRight/SideBarRight';
 import SideBarLeft from '../Compounds/SideBarLeft';

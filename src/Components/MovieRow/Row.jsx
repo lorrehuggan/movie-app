@@ -1,13 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import axios from '../Utils/axios';
-import './Row.scss';
+
+//Utils
+import axios from '../../Utils/axios';
+
+//Icons
 import { AiFillCaretRight, AiFillCaretLeft } from 'react-icons/ai';
+
+//Components
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
-import Movie from './Movie';
+import Movie from '../Movie';
 
 //Styles
-import { Wrapper, GradientLeft, GradientRight } from './Row.styles';
+import {
+  Wrapper,
+  GradientLeft,
+  GradientRight,
+  Header,
+  Buttons,
+  MovieContainer,
+  ScrollButton,
+} from './Row.styles';
+import { Header3 } from '../FontAttr/type';
 
 const base_img_url = 'https://image.tmdb.org/t/p/original';
 
@@ -76,26 +90,35 @@ function Row({ title, fetchUrl, isLargeRow, isMovieRow }) {
   };
 
   return (
-    <Wrapper>
-      <div className="row__gradient-right"></div>
-      <div className="row__gradient-left"></div>
-      <div className="row__header">
-        <h2 className="row__title">{title}</h2>
-        <div className="row__scroll">
-          <button
+    <Wrapper justify="space-between" direction="row">
+      <GradientRight></GradientRight>
+      <GradientLeft></GradientLeft>
+
+      <Header justify="space-between" direction="row">
+        <Header3>{title}</Header3>
+        <Buttons direction="row">
+          <ScrollButton
+            style={
+              hideButton
+                ? {
+                    opacity: '0',
+                    pointerEvents: 'none',
+                    transition: 'opacity 0.5s ease',
+                  }
+                : {}
+            }
             onClick={prevHandler}
-            className={hideButton ? 'display-none' : 'left__button'}
             id="previous"
           >
             <AiFillCaretLeft />
-          </button>
-          <button onClick={nextHandler} className="right__button" id="next">
+          </ScrollButton>
+          <ScrollButton onClick={nextHandler} id="next">
             <AiFillCaretRight />
-          </button>
-        </div>
-      </div>
+          </ScrollButton>
+        </Buttons>
+      </Header>
 
-      <div style={translateX} className="row__posters">
+      <MovieContainer style={translateX} className="row__posters">
         {movies.map((movie) => {
           return (
             <Movie
@@ -106,7 +129,7 @@ function Row({ title, fetchUrl, isLargeRow, isMovieRow }) {
             />
           );
         })}
-      </div>
+      </MovieContainer>
       {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </Wrapper>
   );

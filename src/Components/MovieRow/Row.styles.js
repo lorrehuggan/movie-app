@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { flex } from '../../GlobalStyles/mixins';
+import { flex, noDisplay } from '../../GlobalStyles/mixins';
 
 export const Wrapper = styled.section`
   width: 80rem;
@@ -25,7 +25,7 @@ export const GradientRight = styled.div`
 
 export const GradientLeft = styled.div`
   background: linear-gradient(
-    to left,
+    to right,
     ${({ theme }) => theme.colors.primaryDark},
     hsla(0, 0%, 6%, 0.384),
     rgba(0, 0, 0, 0)
@@ -37,3 +37,32 @@ export const GradientLeft = styled.div`
   width: 90px;
   z-index: 3;
 `;
+
+export const Header = styled.header`
+  ${flex};
+  width: 100%;
+  height: 90px;
+`;
+
+export const Buttons = styled.div`
+  ${flex}
+`;
+
+export const ScrollButton = styled.button`
+  padding: 0.1rem 1.4rem;
+  margin-left: 1rem;
+  background-color: ${({ theme }) => theme.colors.primary};
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: white;
+  opacity: 1;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.primaryAlt};
+  }
+`;
+
+export const MovieContainer = styled.div``;

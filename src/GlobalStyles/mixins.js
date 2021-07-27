@@ -6,3 +6,9 @@ export const flex = css`
   align-items: center;
   justify-content: ${({ justify }) => (justify ? justify : 'center')};
 `;
+
+export const noDisplay = css`
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.5s ease;
+`;
