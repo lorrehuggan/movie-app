@@ -38,13 +38,14 @@ export const LinkContainer = styled.div`
 
 export const MenuList = styled.ul`
   ${flex}
-  height: 40%;
+  height: 30%;
   padding: 0rem 6.8rem;
   margin-top: 4rem;
 `;
 
 export const Links = styled(Link)`
   font-size: ${({ theme }) => theme.fontSize.subHeader};
+  font-weight: 700;
   cursor: pointer;
   transition: color 0.3s ease;
   text-decoration: none;
@@ -53,4 +54,14 @@ export const Links = styled(Link)`
   &:hover {
     color: ${({ theme }) => theme.colors.primaryAlt};
   }
+`;
+
+export const Signature = styled.div`
+  ${flex}
+  width: 15vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 1rem;
+  opacity: 0.1;
 `;
