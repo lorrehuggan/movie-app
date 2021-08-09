@@ -69,4 +69,6 @@ export const ScrollButton = styled.button`
   }
 `;
 
-export const MovieContainer = styled.div``;
+export const MovieContainer = styled.div`
+  display: flex;
+`;

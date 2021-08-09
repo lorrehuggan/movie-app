@@ -6,8 +6,7 @@ import axios from '../../Utils/axios';
 //Components
 import SideBarSearch from '../Search/SideBarSearch';
 import SideBarSearchResults from '../SearchResults/SideBarSearchResults';
-import SideBarPopularMovies from '../SideBarPopularMovies';
-import SideBarFavorites from '../SideBarFav/SideBarFavorites.jsx';
+import SideBarPopularMovies from '../SideBarPopular/SideBarPopularMovies';
 
 //Styles
 import {
@@ -116,13 +115,6 @@ function SideBar({ fetchUrl, fetchQuery }) {
 
               <SideBarPopularMovies top3={top3} base_img_url={base_img_url} />
             </Popular>
-            {/* <Popular>
-              <Header className="sidebar__header">
-                <Paragraph>Favorites</Paragraph>
-              </Header>
-
-              <SideBarFavorites fav={fav} base_img_url={base_img_url} />
-            </Popular> */}
           </MovieWrapper>
         )}
       </SideContainer>
