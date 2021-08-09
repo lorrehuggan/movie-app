@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { media } from '../../GlobalStyles/mediaQueries';
 
 //Mixins
 import { flex } from '../../GlobalStyles/mixins';
 
 export const Wrapper = styled.section`
   position: fixed;
-  left: 0;
+  left: ${({ openClose }) => (openClose ? '0' : '-21rem')};
   top: 0;
   height: 100vh;
   z-index: 6;
+  transition: left 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 `;
 
 export const SideContainer = styled.div`
@@ -23,6 +25,9 @@ export const SideContainer = styled.div`
   position: relative;
   ${flex};
   transition: left 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  ${media.tablet} {
+    width: 30vw;
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -39,8 +44,11 @@ export const LinkContainer = styled.div`
 export const MenuList = styled.ul`
   ${flex}
   height: 30%;
-  padding: 0rem 6.8rem;
+  padding: 0rem 6rem;
   margin-top: 4rem;
+  ${media.tablet} {
+    padding: 0rem 3.5rem;
+  }
 `;
 
 export const Links = styled(Link)`
@@ -54,6 +62,9 @@ export const Links = styled(Link)`
   &:hover {
     color: ${({ theme }) => theme.colors.primaryAlt};
   }
+  ${media.tablet} {
+    font-size: ${({ theme }) => theme.fontSize.body};
+  }
 `;
 
 export const Signature = styled.div`
@@ -64,4 +75,7 @@ export const Signature = styled.div`
   left: 0;
   margin-bottom: 1rem;
   opacity: 0.1;
+  ${media.tablet} {
+    width: 100%;
+  }
 `;

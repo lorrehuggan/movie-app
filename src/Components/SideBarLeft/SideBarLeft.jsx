@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useContext } from 'react';
 
 //Images
-import Logo from '../../Elements/Logo';
+import Logo from '../Logo/Logo';
 
 //Styles
 import {
@@ -22,7 +22,7 @@ function SideBar() {
   //Global Sidebar open
   const { openSideBar, setOpenSideBar } = useContext(SideBarContext);
   return (
-    <Wrapper>
+    <Wrapper openClose={openSideBar}>
       <SideContainer openClose={openSideBar} justify="left">
         <LogoContainer>
           <Logo />
@@ -33,6 +33,7 @@ function SideBar() {
             <Links>Tv Series</Links>
             <Links>Anime</Links>
             <Links>Log Out</Links>
+            <Links onClick={() => setOpenSideBar(false)}>Close Menu</Links>
           </MenuList>
         </LinkContainer>
         <Signature>

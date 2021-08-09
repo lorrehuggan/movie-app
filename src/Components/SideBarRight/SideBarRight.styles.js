@@ -30,11 +30,9 @@ export const Popular = styled.div`
 `;
 
 export const Header = styled.div`
-  font-size: 1rem;
   color: rgb(185, 185, 185);
   margin-bottom: 1.5rem;
   color: ${({ theme }) => theme.colors.primary};
-  letter-spacing: 3px;
   text-transform: uppercase;
 `;
 

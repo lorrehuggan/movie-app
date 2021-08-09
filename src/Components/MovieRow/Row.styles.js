@@ -71,4 +71,5 @@ export const ScrollButton = styled.button`
 
 export const MovieContainer = styled.div`
   display: flex;
+  transition: transform 0.8s ease;
 `;
