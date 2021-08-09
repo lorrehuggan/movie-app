@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 import { flex, noDisplay } from '../../GlobalStyles/mixins';
+import { media } from '../../GlobalStyles/mediaQueries';
 
 export const Wrapper = styled.section`
   width: 80rem;
   left: 0;
   overflow-x: hidden;
   position: relative;
+  ${media.tablet} {
+    width: 90vw;
+  }
 `;
 
 export const GradientRight = styled.div`

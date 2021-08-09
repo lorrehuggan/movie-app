@@ -18,3 +18,13 @@ export const device = {
   desktop: `(min-width: ${size.desktop})`,
   desktopL: `(min-width: ${size.desktop})`,
 };
+
+export const media = {
+  smallMobile: `@media screen and (max-width: 320px)`,
+  mediumMobile: `@media screen and (max-width: 375px)`,
+  largeMobile: `@media screen and (max-width: 425px)`,
+  tablet: `@media screen and (max-width: 768px)`,
+  laptop: `@media screen and (max-width: 1024px)`,
+  large: `@media screen and (max-width: 1440px)`,
+  desktop: `@media screen and (max-width: 2560px)`,
+};

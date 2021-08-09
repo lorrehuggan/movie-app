@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { flex } from '../../GlobalStyles/mixins';
+import { media } from '../../GlobalStyles/mediaQueries';
 
 export const Wrapper = styled.section`
   height: 35rem;
@@ -10,6 +11,10 @@ export const Wrapper = styled.section`
   background-image: url(${({ bannerPath }) => bannerPath});
   background-size: cover;
   background-position: center center;
+  ${media.tablet} {
+    width: 90vw;
+    margin: auto;
+  }
 `;
 
 export const Gradient = styled.section`
@@ -40,6 +45,9 @@ export const Container = styled.div`
   margin-top: 3rem;
   z-index: 2;
   padding: 0rem 5rem;
+  ${media.tablet} {
+    padding: 0rem 2rem;
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -50,6 +58,8 @@ export const ButtonsContainer = styled.div`
   cursor: pointer;
   ${flex}
   width: 100%;
+  ${media.tablet} {
+  }
 `;
 
 export const BannerButton = styled.div`
@@ -58,6 +68,9 @@ export const BannerButton = styled.div`
   color: white;
   ${flex}
   cursor: pointer;
+  ${media.tablet} {
+    margin: 0rem 2rem;
+  }
 `;
 
 export const BannerInfo = styled.p``;

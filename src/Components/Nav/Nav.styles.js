@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 //Mixins
 import { flex } from '../../GlobalStyles/mixins';
 
+//media queries
+import { media } from '../../GlobalStyles/mediaQueries';
+
 export const Navigation = styled.nav`
   ${flex}
   width: 100%;
@@ -14,6 +17,9 @@ export const Navigation = styled.nav`
   position: fixed;
   z-index: 4;
   padding: 2rem 0rem;
+  ${media.tablet} {
+    padding: 0rem;
+  }
 `;
 
 export const NavContainer = styled.div`
@@ -22,6 +28,10 @@ export const NavContainer = styled.div`
   background-color: ${({ showNav, theme }) =>
     showNav ? theme.colors.primaryDark : 'transparent'};
   transition: background-color 0.5s ease;
+  ${media.tablet} {
+    width: 90%;
+    padding-top: 2rem;
+  }
 `;
 
 export const LinksContainer = styled.ul`

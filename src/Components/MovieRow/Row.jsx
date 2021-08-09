@@ -9,7 +9,7 @@ import { AiFillCaretRight, AiFillCaretLeft } from 'react-icons/ai';
 //Components
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
-import Movie from '../Movie';
+import Movie from '../MovieItem/Movie';
 
 //Styles
 import {
