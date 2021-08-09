@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { flex } from '../../GlobalStyles/mixins';
 
+import { media } from '../../GlobalStyles/mediaQueries';
+
 export const Wrapper = styled.div`
   height: 80vh;
   width: 100%;
@@ -15,6 +17,11 @@ export const ButtonContainer = styled.div`
 
 export const List = styled.ul`
   width: 70%;
+  ${flex}
+  ${media.laptop} {
+    width: 50%;
+    justify-content: space-between;
+  }
 `;
 
 export const Movies = styled.li`
@@ -56,5 +63,8 @@ export const MovieImage = styled.img`
   text-align: left;
   &:hover {
     transform: scale(1.08);
+  }
+  ${media.laptop} {
+    width: 70px;
   }
 `;

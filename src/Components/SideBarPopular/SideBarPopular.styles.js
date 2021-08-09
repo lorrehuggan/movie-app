@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { flex } from '../../GlobalStyles/mixins';
+import { media } from '../../GlobalStyles/mediaQueries';
 
 export const List = styled.ul``;
 
@@ -11,7 +12,7 @@ export const Movie = styled.li`
 
 export const Image = styled.img`
   object-fit: contain;
-  width: 70px;
+  width: 100px;
   margin-right: 5px;
   margin-left: 5px;
   border-radius: 10px;
@@ -22,6 +23,9 @@ export const Image = styled.img`
 
   &:hover {
     transform: scale(1.08);
+  }
+  ${media.tablet} {
+    width: 70px;
   }
 `;
 export const Title = styled.p`

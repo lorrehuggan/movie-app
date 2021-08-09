@@ -31,7 +31,7 @@ export const SideContainer = styled.div`
 
 export const Popular = styled.div`
   width: 60%;
-  margin-top: 2rem;
+  margin-top: 0rem;
   ${media.tablet} {
     margin-top: 3.2rem;
     width: 45%;

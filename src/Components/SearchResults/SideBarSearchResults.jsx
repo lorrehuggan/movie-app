@@ -23,10 +23,10 @@ function SideBarSearchResults({
     <Wrapper justify="space-between">
       <Header3>Search Results...</Header3>
 
-      <List className="sidebar__popular-list">
+      <List>
         {searchResults.map((movie) => {
           return (
-            <Movies key={movie.id + 2}>
+            <Movies justify="space-between" key={movie.id + 2}>
               <MovieImage
                 direction="row"
                 justify="left"
