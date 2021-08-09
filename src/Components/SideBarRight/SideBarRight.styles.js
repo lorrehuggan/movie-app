@@ -1,14 +1,16 @@
 import styled from 'styled-components';
+import { media } from '../../GlobalStyles/mediaQueries';
 
 //Mixins
 import { flex } from '../../GlobalStyles/mixins';
 
 export const Wrapper = styled.section`
   position: fixed;
-  right: 0;
+  right: ${({ openClose }) => (openClose ? '0' : '-21rem')};
   top: 0;
   height: 100vh;
   z-index: 6;
+  transition: right 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 `;
 
 export const SideContainer = styled.div`
@@ -17,16 +19,23 @@ export const SideContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.primaryDark};
   border-left: 1px solid rgba(255, 255, 255, 0.05);
   position: absolute;
-  left: ${({ sidebar }) => (sidebar ? '0' : '21rem')};
+  right: ${({ openClose }) => (openClose ? '0' : '-21rem')};
   top: 0;
   position: relative;
   ${flex};
-  transition: left 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: right 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  ${media.tablet} {
+    width: 70vw;
+  }
 `;
 
 export const Popular = styled.div`
   width: 60%;
   margin-top: 2rem;
+  ${media.tablet} {
+    margin-top: 3.2rem;
+    width: 45%;
+  }
 `;
 
 export const Header = styled.div`
@@ -43,5 +52,4 @@ export const MovieWrapper = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100%;
-  margin-top: 2rem;
 `;

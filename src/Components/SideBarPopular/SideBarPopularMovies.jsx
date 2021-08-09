@@ -3,7 +3,7 @@ import { Image, List, Movie, Rating, Title } from './SideBarPopular.styles';
 
 function SideBarPopularMovies({ top3, base_img_url }) {
   return (
-    <List className="sidebar__popular-list">
+    <List>
       {top3.map((movie) => {
         return (
           <Movie

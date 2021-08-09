@@ -93,8 +93,8 @@ function SideBar({ fetchUrl, fetchQuery }) {
   };
 
   return (
-    <Wrapper>
-      <SideContainer sidebar={openSideBar}>
+    <Wrapper openClose={openSideBar}>
+      <SideContainer openClose={openSideBar}>
         <SideBarSearch
           searchSubmit={searchSubmit}
           searchHandler={searchHandler}

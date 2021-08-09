@@ -33,7 +33,12 @@ function SideBar() {
             <Links>Tv Series</Links>
             <Links>Anime</Links>
             <Links>Log Out</Links>
-            <Links onClick={() => setOpenSideBar(false)}>Close Menu</Links>
+            <Links
+              style={{ color: 'crimson' }}
+              onClick={() => setOpenSideBar(false)}
+            >
+              Close Menu
+            </Links>
           </MenuList>
         </LinkContainer>
         <Signature>

@@ -11,7 +11,7 @@ export const Movie = styled.li`
 
 export const Image = styled.img`
   object-fit: contain;
-  width: 100px;
+  width: 70px;
   margin-right: 5px;
   margin-left: 5px;
   border-radius: 10px;
@@ -26,7 +26,8 @@ export const Image = styled.img`
 `;
 export const Title = styled.p`
   position: absolute;
-  font-size: 1.1rem;
+  font-size: ${({ theme }) => theme.fontSize.body};
+  font-weight: 700;
   top: 5px;
   right: 0;
   width: 45%;
@@ -40,8 +41,7 @@ export const Title = styled.p`
 
 export const Rating = styled.small`
   position: absolute;
-  font-size: 0.8rem;
-  letter-spacing: 3px;
+  font-size: ${({ theme }) => theme.fontSize.body};
   bottom: 5px;
   right: 0;
   width: 45%;
