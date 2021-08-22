@@ -15,6 +15,10 @@ export const Wrapper = styled.section`
     width: 90vw;
     margin: auto;
   }
+  ${media.laptop} {
+    width: 90vw;
+    margin: auto;
+  }
 `;
 
 export const Gradient = styled.section`

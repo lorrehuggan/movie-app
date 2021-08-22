@@ -20,6 +20,9 @@ export const Navigation = styled.nav`
   ${media.tablet} {
     padding: 0rem;
   }
+  ${media.laptop} {
+    padding: 0rem;
+  }
 `;
 
 export const NavContainer = styled.div`
@@ -31,6 +34,10 @@ export const NavContainer = styled.div`
   ${media.tablet} {
     width: 90%;
     padding-top: 2rem;
+  }
+  ${media.laptop} {
+    width: 90%;
+    margin: auto;
   }
 `;
 

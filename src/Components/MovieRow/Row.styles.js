@@ -10,6 +10,9 @@ export const Wrapper = styled.section`
   ${media.tablet} {
     width: 90vw;
   }
+  ${media.laptop} {
+    width: 90vw;
+  }
 `;
 
 export const GradientRight = styled.div`

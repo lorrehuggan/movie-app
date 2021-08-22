@@ -28,6 +28,9 @@ export const SideContainer = styled.div`
   ${media.tablet} {
     width: 30vw;
   }
+  ${media.laptop} {
+    width: 35vw;
+  }
 `;
 
 export const LogoContainer = styled.div`

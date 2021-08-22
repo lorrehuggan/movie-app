@@ -11,6 +11,13 @@ export const Wrapper = styled.section`
   height: 100vh;
   z-index: 6;
   transition: right 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  ${media.tablet} {
+    right: ${({ openClose }) => (openClose ? '0' : '-33rem')};
+  }
+
+  ${media.laptop} {
+    right: ${({ openClose }) => (openClose ? '0' : '-40rem')};
+  }
 `;
 
 export const SideContainer = styled.div`
@@ -26,6 +33,9 @@ export const SideContainer = styled.div`
   transition: right 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
   ${media.tablet} {
     width: 70vw;
+  }
+  ${media.laptop} {
+    width: 65vw;
   }
 `;
 
@@ -43,6 +53,12 @@ export const Header = styled.div`
   margin-bottom: 1.5rem;
   color: ${({ theme }) => theme.colors.primary};
   text-transform: uppercase;
+  ${media.laptop} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const MovieWrapper = styled.div`
@@ -52,4 +68,8 @@ export const MovieWrapper = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100%;
+  ${media.laptop} {
+    width: 40%;
+    height: 50vh;
+  }
 `;

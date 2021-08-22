@@ -2,12 +2,23 @@ import styled from 'styled-components';
 import { flex } from '../../GlobalStyles/mixins';
 import { media } from '../../GlobalStyles/mediaQueries';
 
-export const List = styled.ul``;
+export const List = styled.ul`
+  ${media.laptop} {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 
 export const Movie = styled.li`
   ${flex}
   margin-bottom: 1rem;
   position: relative;
+  ${media.laptop} {
+    width: 30%;
+  }
 `;
 
 export const Image = styled.img`
@@ -27,6 +38,9 @@ export const Image = styled.img`
   ${media.tablet} {
     width: 70px;
   }
+  ${media.laptop} {
+    width: 50px;
+  }
 `;
 export const Title = styled.p`
   position: absolute;
@@ -41,6 +55,9 @@ export const Title = styled.p`
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
   }
+  ${media.laptop} {
+    display: none;
+  }
 `;
 
 export const Rating = styled.small`
@@ -51,4 +68,8 @@ export const Rating = styled.small`
   width: 45%;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.primary};
+
+  ${media.laptop} {
+    display: none;
+  }
 `;
